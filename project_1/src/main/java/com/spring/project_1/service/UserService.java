@@ -15,34 +15,34 @@ public class UserService {
     @Autowired
     UserRepo userRepo;
 
-//    ArrayList<User> users=new ArrayList<>();
+//    ArrayList<User> user=new ArrayList<>();
 //     public UserService(){
 //        users.add(new User(1,"chris","hemsworth","chris@gmail.com","8309690246"));
 //    }
 
     public void addUser(User user){
-//        users.add(user);
+//        user.add(user);
         userRepo.save(user);
     }
 
     public List<User> allUsers(){
         return userRepo.findAll();
-//        return users;
+//        return user;
     }
 
     public User userById(int id){
-//         for(int i=0;i<users.size();i++){
-//             if(id==users.get(i).getUserId()){
-//                 return users.get(i);
+//         for(int i=0;i<user.size();i++){
+//             if(id==user.get(i).getUserId()){
+//                 return user.get(i);
 //             }
 //         }
         return userRepo.findById(id).orElse(null);
     }
 
     public void deleteById(int id){
-//        for (int i=0;i<users.size();i++){
-//            if(users.get(i).getUserId()==id){
-//                users.remove(i);
+//        for (int i=0;i<user.size();i++){
+//            if(user.get(i).getUserId()==id){
+//                user.remove(i);
 //            }
 //        }
         userRepo.deleteById(id);
