@@ -9,29 +9,29 @@ import java.util.List;
 public class UserController {
 
     @Autowired
-    UserService userService;
+    UserServices userServices;
 
     @RequestMapping("adduser")
     public String adduser(@RequestBody User user){
 
-        userService.addUser(user);
+        userServices.addUser(user);
         return "Successfully Registered, "+user.getFirstName()+" "+user.getLastName();
     }
 
     @GetMapping("allusers")
     public List<User> allUsers(){
-        return userService.allUsers();
+        return userServices.allUsers();
     }
 
     @RequestMapping("user/{id}")
     public User userById(@PathVariable int id){
-        return userService.userById(id);
+        return userServices.userById(id);
     }
 
     @RequestMapping("deletebyid/{userId}")
     public String deleteById(@PathVariable("userId") int id){
         String name=userById(id).getFirstName();
-        userService.deleteById(id);
+        userServices.deleteById(id);
         return "deleted Successfully, "+name;
     }
 }
