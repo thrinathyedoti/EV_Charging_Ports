@@ -1,4 +1,4 @@
-package com.spring.project_1.model;
+package com.spring.project_1;
 
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,13 +8,11 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
-import org.springframework.stereotype.Component;
 
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
-@Component
 @Entity
 public class User {
     @Id
